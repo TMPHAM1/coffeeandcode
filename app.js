@@ -532,7 +532,7 @@ function getDirections(long, lat, map) { // Pass POS which is position of desire
                     console.log(response);
                     $('#info-box').empty();
                     var distance = $("<p>").html("<b>Estimated Distance</b>: " + estimateTime.distance.text)
-                    var travelTime = $("<p>").html("<b>Estimated Travel TimeTime </b>: " + estimateTime.duration.text)
+                    var travelTime = $("<p>").html("<b>Estimated Travel Time </b>: " + estimateTime.duration.text)
                     var directionDiv = $('<div>').addClass('directions');
                     var backbutton = $("<button>").addClass("btn btn-primary backButton").text("Back");
                     $(directionDiv).append(backbutton);
