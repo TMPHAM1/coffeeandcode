@@ -34,10 +34,10 @@ function initializeApp() {
     }
     })
 
-   if (window.location.pathname === '/coffeeandcode/') {
+   if (window.location.pathname === 'index.html') {
     localStorage.clear();
    }
-   if (window.location.pathname ==='/coffeeandcode/main.html') {
+   if (window.location.pathname ==='main.html') {
     if (window.location.href.includes('?city')) {
         var url = window.location.href.split('?');
         params = url[1].split('&');
@@ -110,7 +110,7 @@ function initializeApp() {
 
 function home() {
     localStorage.clear();
-    window.location.href = "/coffeeandcode/";
+    window.location.href = "index.html";
 
 }
 
@@ -332,7 +332,7 @@ function getYelpData(map) {
         console.log("city and types", city, types)
     }
 
-    if (window.location.pathname === "/coffeeandcode/") {
+    if (window.location.pathname === "index.html") {
         localStorage.setItem("types", `${types}`);
         var city = localStorage.getItem("city");
         var types = localStorage.getItem("types");
@@ -361,7 +361,7 @@ function getYelpData(map) {
             let buttonToTop = $('<button>').addClass("btn btn-warning").text('⬆').attr('id', 'myBtn').attr('title', 'Go To Top').click(function () {topFunction();});
             $('#info-box').append(scrollDown);
             $('#info-box').append(buttonToTop);
-        if (window.location.pathname === "/coffeeandcode/") {
+        if (window.location.pathname === "index.html") {
             
             if (response.hasOwnProperty("businesses") && response.businesses.length > 0) {
                 city = localStorage.getItem("city");
