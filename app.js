@@ -87,23 +87,7 @@ function initializeApp() {
 
 }
 
-// function getLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(showPosition);
-//     } else {
-//         console.log('error');
-//         $(".carouselContainer").addClass("hideCarousel");
 
-//     }
-// }
-
-// function showPosition(position) {
-//     let latitude = position.coords.latitude;
-//     let longitude = position.coords.longitude;
-//     getCarouselYelpData(latitude, longitude);
-//     $(".carouselContainer").removeClass("hideCarousel");
-
-// }
 
 
 
@@ -244,7 +228,6 @@ function getDetailedYelpData(id, map) {
             }
             photos = photos[2]
             display_address = display_address[0] + ' ' + display_address[1];
-            console.log(display_address);
             $('#details-header').text(name);
             $('.detailed-image > img').attr('src', photos);
             $('.detailed-address').text(display_address)
@@ -260,7 +243,6 @@ function getDetailedYelpData(id, map) {
 
         },
         error: function (error) {
-            console.log(error);
         }
     }
 
@@ -315,7 +297,6 @@ function getCarouselYelpData(latitude, longitude) {
             })
         },
         error: function (err) {
-            console.log(err);
         }
     }
     $.ajax(settings);
@@ -329,7 +310,6 @@ function getYelpData(map) {
     if (localStorage.length) {
         city = localStorage.getItem("city");
         types = localStorage.getItem("types");
-        console.log("city and types", city, types)
     }
 
     if (window.location.pathname === "index.html") {
@@ -476,7 +456,6 @@ function getYelpData(map) {
             }
    }},
         error: function (err) {
-            console.log("error");
         }
     }
     $.ajax(settings);
@@ -529,7 +508,6 @@ function getDirections(long, lat, map) { // Pass POS which is position of desire
                     }
                     previousRoute = true;
                     display.setDirections(response);
-                    console.log(response);
                     $('#info-box').empty();
                     var distance = $("<p>").html("<b>Estimated Distance</b>: " + estimateTime.distance.text)
                     var travelTime = $("<p>").html("<b>Estimated Travel Time </b>: " + estimateTime.duration.text)
@@ -537,9 +515,7 @@ function getDirections(long, lat, map) { // Pass POS which is position of desire
                     var backbutton = $("<button>").addClass("btn btn-primary backButton").text("Back");
                     $(directionDiv).append(backbutton);
                     for (var i = 0; i < directions.length; i++) {
-                        console.log(directions[i].maneuver)
                         if(directions[i].maneuver) {
-                            
                             var icon;
                             var step  = directions[i].maneuver
                             switch(step) {
@@ -637,7 +613,6 @@ function getDirections(long, lat, map) { // Pass POS which is position of desire
 
         },
     function() {
-        console.log("no directions")
         $('#details-modal').modal('hide');
         $('#info-box').empty();
         var backbutton = $("<button>").addClass("btn btn-primary backButton").text("Back");
