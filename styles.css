@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Shadto+Light+Two');
 
 html{
     height: 100%;
@@ -7,7 +8,8 @@ html{
     /* box-sizing: border-box; */
     padding: 0;
     margin: 0;
-   
+    font-family: 'Shadows Into Light Two',
+    cursive;
 }
 
 body{
@@ -15,7 +17,6 @@ body{
     background: #ffece6;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./wallpaper.jpeg');
     background-position: center;
-    background-size: cover;
 
 }
 .container > h1{
